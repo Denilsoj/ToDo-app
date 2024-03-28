@@ -1,39 +1,46 @@
 import { useEffect, useState } from 'react';
-import { FaRegCircleCheck, FaEllipsisVertical, FaCircleCheck } from "react-icons/fa6";
-import { MainContainer, List, Item } from './styled';
+import PropTypes from 'prop-types';
+import Tasks from '../Tasks';
+import { MainContainer, List } from './styled';
 
 
-export default function Main() {
+export default function Main({routerTasks}) {
     const [tasks, setTasks] = useState([
         {
             id:0,
             description: 'Fazer trabalho',
-            check: true
+            check: true,
+            favorite: false,
         },
         {
             id:1,
             description: 'Fazer trabalho para a faculdade até amanhã',
-            check: false
+            check: false,
+            favorite: false,
         },
         {
             id:2,
             description: 'Fazer trabalho para a faculdade até amanhã',
-            check: false
+            check: false,
+            favorite: false,
         },
         {
             id:3,
             description: 'Fazer trabalho para a faculdade até amanhã',
-            check: false
+            check: false,
+            favorite: false,
         },
         {
             id:4,
             description: 'Fazer trabalho para a faculdade até amanhã',
-            check: false
+            check: false,
+            favorite: false,
         },
         {
             id:5,
             description: 'Fazer trabalho para a faculdade até amanhã',
-            check: false
+            check: false,
+            favorite: false,
         },
     ]);
     useEffect(() => {
@@ -42,25 +49,19 @@ export default function Main() {
         }
         getData();
     }, []);
-    if(tasks.length > 0){
-        return(
+
+    switch (routerTasks){
+        case 'tasks': return(
             <MainContainer>
                 <List>
-                {
-                tasks.map((task) => (
-                    <Item key={task.id}>
-                        <span>{task.check? <FaCircleCheck className='checked'/> : <FaRegCircleCheck className='check'/>}</span>
-                        <span>{task.description}</span>
-                    </Item>
-                ))
-                }
-            </List>
+                    <Tasks typeTasks='tasks' listTasks={tasks}/>
+                </List>
             </MainContainer>
-        )
+        );
     }
-    return(
-        <MainContainer>
-            <h1>Carregando...</h1>
-        </MainContainer>
-    );
+   
+}
+
+Main.propTypes = {
+    routerTasks: PropTypes.string,
 }

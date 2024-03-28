@@ -8,7 +8,7 @@ function App() {
     <Container>
       <SideBar/>
       <Header/>
-      <Main/>
+      <Main routerTasks= 'tasks'/>
       <GlobalStyle/>
     </Container>
   )
