@@ -16,7 +16,7 @@ export default function Main({routerTasks}) {
             id:1,
             description: 'Fazer trabalho para a faculdade até amanhã',
             check: false,
-            favorite: false,
+            favorite: true,
         },
         {
             id:2,
@@ -55,6 +55,20 @@ export default function Main({routerTasks}) {
             <MainContainer>
                 <List>
                     <Tasks typeTasks='tasks' listTasks={tasks}/>
+                </List>
+            </MainContainer>
+        );
+        case 'favorite': return(
+            <MainContainer>
+                <List>
+                    <Tasks typeTasks='favorite' listTasks={tasks}/>
+                </List>
+            </MainContainer>
+        );
+        case 'finished': return(
+            <MainContainer>
+                <List>
+                    <Tasks typeTasks='finished' listTasks={tasks}/>
                 </List>
             </MainContainer>
         );

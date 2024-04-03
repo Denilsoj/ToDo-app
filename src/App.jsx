@@ -16,6 +16,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={ <Main routerTasks='tasks'/>}/>
+        <Route path='/favoritas' element={<Main routerTasks='favorite'/>}/>
+        <Route path='/finalizadas' element={<Main routerTasks='finished'/>}/>
         <Route path='*' element={<Page404/>}/>
       </Routes>
       <GlobalStyle/>

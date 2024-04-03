@@ -15,6 +15,9 @@ body {
 li{
     list-style: none;
 }
+a {
+    text-decoration: none;
+}
 `;
 export const Container = styled.div`
 width: 100vw;
