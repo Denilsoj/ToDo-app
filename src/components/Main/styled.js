@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 export const MainContainer = styled.main`
 position: absolute;
-top: 150px;
-left: 250px;
-width: 100vw;
+top: 180px;
+left: 450px;
+width: 1000px;
 padding-left: 30px;
 `;
 
